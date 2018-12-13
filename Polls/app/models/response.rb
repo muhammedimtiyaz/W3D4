@@ -10,7 +10,7 @@
 #
 
 class Response < ApplicationRecord
-  validate :no_duplicates_from_user
+  validate :no_duplicates_from_this_user
 
   belongs_to :respondent,
     class_name: 'User',
@@ -27,6 +27,8 @@ class Response < ApplicationRecord
     through: :choice,
     source: :question
 
+
+
   def sibling_responses
     self.question.responses.where.not(id: self.id)
   end
@@ -38,7 +40,7 @@ class Response < ApplicationRecord
   
   private
 
-  def no_duplicates_from_user
+  def no_duplicates_from_this_user
     if self.respondent_already_answered?
       errors[:user_id] << 'user already responded to the question.'
     end
