@@ -175,3 +175,392 @@ Migrating to CreateResponse (20181213200412)
   ↳ bin/rails:9
   [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /Users/aa/.rbenv/versions/2.5.1/bin/annotate:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:11
+  [1m[36mPoll Load (21.8ms)[0m  [1m[34mSELECT "polls".* FROM "polls"[0m
+  ↳ db/seeds.rb:12
+  [1m[36mQuestion Load (47.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ db/seeds.rb:13
+  [1m[36mAnswerChoice Load (0.2ms)[0m  [1m[34mSELECT "answer_choices".* FROM "answer_choices"[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:11
+  [1m[36mPoll Load (17.8ms)[0m  [1m[34mSELECT "polls".* FROM "polls"[0m
+  ↳ db/seeds.rb:12
+  [1m[36mQuestion Load (32.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ db/seeds.rb:13
+  [1m[36mAnswerChoice Load (0.1ms)[0m  [1m[34mSELECT "answer_choices".* FROM "answer_choices"[0m
+  ↳ db/seeds.rb:14
+  [1m[36mResponse Load (0.1ms)[0m  [1m[34mSELECT "responses".* FROM "responses"[0m
+  ↳ db/seeds.rb:15
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Markov"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (32.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["username", "Markov"], ["created_at", "2018-12-13 20:44:47.014933"], ["updated_at", "2018-12-13 20:44:47.014933"]]
+  ↳ db/seeds.rb:17
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Gizmo"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["username", "Gizmo"], ["created_at", "2018-12-13 20:44:47.049536"], ["updated_at", "2018-12-13 20:44:47.049536"]]
+  ↳ db/seeds.rb:18
+  [1m[36mPoll Create (0.2ms)[0m  [1m[32mINSERT INTO "polls" ("user_id", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Cats Poll"], ["created_at", "2018-12-13 20:44:47.089743"], ["updated_at", "2018-12-13 20:44:47.089743"]]
+  ↳ db/seeds.rb:20
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("text", "poll_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "What Cat Is Cutest?"], ["poll_id", 1], ["created_at", "2018-12-13 20:44:47.096337"], ["updated_at", "2018-12-13 20:44:47.096337"]]
+  ↳ db/seeds.rb:22
+  [1m[36mAnswerChoice Create (0.1ms)[0m  [1m[32mINSERT INTO "answer_choices" ("text", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Markov"], ["question_id", 1], ["created_at", "2018-12-13 20:44:47.102666"], ["updated_at", "2018-12-13 20:44:47.102666"]]
+  ↳ db/seeds.rb:23
+  [1m[36mAnswerChoice Create (0.1ms)[0m  [1m[32mINSERT INTO "answer_choices" ("text", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Curie"], ["question_id", 1], ["created_at", "2018-12-13 20:44:47.103784"], ["updated_at", "2018-12-13 20:44:47.103784"]]
+  ↳ db/seeds.rb:24
+  [1m[36mAnswerChoice Create (0.1ms)[0m  [1m[32mINSERT INTO "answer_choices" ("text", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Sally"], ["question_id", 1], ["created_at", "2018-12-13 20:44:47.104586"], ["updated_at", "2018-12-13 20:44:47.104586"]]
+  ↳ db/seeds.rb:25
+  [1m[36mQuestion Create (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("text", "poll_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Which Toy Is Most Fun?"], ["poll_id", 1], ["created_at", "2018-12-13 20:44:47.105413"], ["updated_at", "2018-12-13 20:44:47.105413"]]
+  ↳ db/seeds.rb:27
+  [1m[36mAnswerChoice Create (0.1ms)[0m  [1m[32mINSERT INTO "answer_choices" ("text", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "String"], ["question_id", 2], ["created_at", "2018-12-13 20:44:47.106290"], ["updated_at", "2018-12-13 20:44:47.106290"]]
+  ↳ db/seeds.rb:28
+  [1m[36mAnswerChoice Create (0.1ms)[0m  [1m[32mINSERT INTO "answer_choices" ("text", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Ball"], ["question_id", 2], ["created_at", "2018-12-13 20:44:47.107106"], ["updated_at", "2018-12-13 20:44:47.107106"]]
+  ↳ db/seeds.rb:29
+  [1m[36mAnswerChoice Create (0.1ms)[0m  [1m[32mINSERT INTO "answer_choices" ("text", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Bird"], ["question_id", 2], ["created_at", "2018-12-13 20:44:47.107883"], ["updated_at", "2018-12-13 20:44:47.107883"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:11
+  [1m[36mPoll Load (0.1ms)[0m  [1m[34mSELECT "polls".* FROM "polls"[0m
+  ↳ db/seeds.rb:12
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ db/seeds.rb:13
+  [1m[36mAnswerChoice Load (0.1ms)[0m  [1m[34mSELECT "answer_choices".* FROM "answer_choices"[0m
+  ↳ db/seeds.rb:14
+  [1m[36mResponse Load (0.1ms)[0m  [1m[34mSELECT "responses".* FROM "responses"[0m
+  ↳ db/seeds.rb:15
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Markov"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["username", "Markov"], ["created_at", "2018-12-13 20:45:37.552147"], ["updated_at", "2018-12-13 20:45:37.552147"]]
+  ↳ db/seeds.rb:17
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Gizmo"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["username", "Gizmo"], ["created_at", "2018-12-13 20:45:37.553968"], ["updated_at", "2018-12-13 20:45:37.553968"]]
+  ↳ db/seeds.rb:18
+  [1m[36mPoll Create (0.2ms)[0m  [1m[32mINSERT INTO "polls" ("user_id", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Cats Poll"], ["created_at", "2018-12-13 20:45:37.560601"], ["updated_at", "2018-12-13 20:45:37.560601"]]
+  ↳ db/seeds.rb:20
+  [1m[36mQuestion Create (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("text", "poll_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "What Cat Is Cutest?"], ["poll_id", 1], ["created_at", "2018-12-13 20:45:37.566366"], ["updated_at", "2018-12-13 20:45:37.566366"]]
+  ↳ db/seeds.rb:22
+  [1m[36mAnswerChoice Create (0.1ms)[0m  [1m[32mINSERT INTO "answer_choices" ("text", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Markov"], ["question_id", 1], ["created_at", "2018-12-13 20:45:37.571968"], ["updated_at", "2018-12-13 20:45:37.571968"]]
+  ↳ db/seeds.rb:23
+  [1m[36mAnswerChoice Create (0.1ms)[0m  [1m[32mINSERT INTO "answer_choices" ("text", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Curie"], ["question_id", 1], ["created_at", "2018-12-13 20:45:37.573041"], ["updated_at", "2018-12-13 20:45:37.573041"]]
+  ↳ db/seeds.rb:24
+  [1m[36mAnswerChoice Create (0.1ms)[0m  [1m[32mINSERT INTO "answer_choices" ("text", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Sally"], ["question_id", 1], ["created_at", "2018-12-13 20:45:37.573822"], ["updated_at", "2018-12-13 20:45:37.573822"]]
+  ↳ db/seeds.rb:25
+  [1m[36mQuestion Create (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("text", "poll_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Which Toy Is Most Fun?"], ["poll_id", 1], ["created_at", "2018-12-13 20:45:37.574638"], ["updated_at", "2018-12-13 20:45:37.574638"]]
+  ↳ db/seeds.rb:27
+  [1m[36mAnswerChoice Create (0.1ms)[0m  [1m[32mINSERT INTO "answer_choices" ("text", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "String"], ["question_id", 2], ["created_at", "2018-12-13 20:45:37.575496"], ["updated_at", "2018-12-13 20:45:37.575496"]]
+  ↳ db/seeds.rb:28
+  [1m[36mAnswerChoice Create (0.1ms)[0m  [1m[32mINSERT INTO "answer_choices" ("text", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Ball"], ["question_id", 2], ["created_at", "2018-12-13 20:45:37.576276"], ["updated_at", "2018-12-13 20:45:37.576276"]]
+  ↳ db/seeds.rb:29
+  [1m[36mAnswerChoice Create (0.1ms)[0m  [1m[32mINSERT INTO "answer_choices" ("text", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Bird"], ["question_id", 2], ["created_at", "2018-12-13 20:45:37.577045"], ["updated_at", "2018-12-13 20:45:37.577045"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Load (14.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:11
+  [1m[36mPoll Load (7.1ms)[0m  [1m[34mSELECT "polls".* FROM "polls"[0m
+  ↳ db/seeds.rb:12
+  [1m[36mQuestion Load (21.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ db/seeds.rb:13
+  [1m[36mAnswerChoice Load (0.1ms)[0m  [1m[34mSELECT "answer_choices".* FROM "answer_choices"[0m
+  ↳ db/seeds.rb:14
+  [1m[36mResponse Load (0.1ms)[0m  [1m[34mSELECT "responses".* FROM "responses"[0m
+  ↳ db/seeds.rb:15
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Markov"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["username", "Markov"], ["created_at", "2018-12-13 20:47:24.777089"], ["updated_at", "2018-12-13 20:47:24.777089"]]
+  ↳ db/seeds.rb:17
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Gizmo"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["username", "Gizmo"], ["created_at", "2018-12-13 20:47:24.779373"], ["updated_at", "2018-12-13 20:47:24.779373"]]
+  ↳ db/seeds.rb:18
+  [1m[36mPoll Create (0.2ms)[0m  [1m[32mINSERT INTO "polls" ("user_id", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["title", "Cats Poll"], ["created_at", "2018-12-13 20:47:24.804030"], ["updated_at", "2018-12-13 20:47:24.804030"]]
+  ↳ db/seeds.rb:20
+  [1m[36mQuestion Create (0.2ms)[0m  [1m[32mINSERT INTO "questions" ("text", "poll_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "What Cat Is Cutest?"], ["poll_id", 1], ["created_at", "2018-12-13 20:47:24.810412"], ["updated_at", "2018-12-13 20:47:24.810412"]]
+  ↳ db/seeds.rb:22
+  [1m[36mAnswerChoice Create (0.2ms)[0m  [1m[32mINSERT INTO "answer_choices" ("text", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Markov"], ["question_id", 1], ["created_at", "2018-12-13 20:47:24.816787"], ["updated_at", "2018-12-13 20:47:24.816787"]]
+  ↳ db/seeds.rb:23
+  [1m[36mAnswerChoice Create (0.1ms)[0m  [1m[32mINSERT INTO "answer_choices" ("text", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Curie"], ["question_id", 1], ["created_at", "2018-12-13 20:47:24.817915"], ["updated_at", "2018-12-13 20:47:24.817915"]]
+  ↳ db/seeds.rb:24
+  [1m[36mAnswerChoice Create (0.1ms)[0m  [1m[32mINSERT INTO "answer_choices" ("text", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Sally"], ["question_id", 1], ["created_at", "2018-12-13 20:47:24.818763"], ["updated_at", "2018-12-13 20:47:24.818763"]]
+  ↳ db/seeds.rb:25
+  [1m[36mQuestion Create (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("text", "poll_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Which Toy Is Most Fun?"], ["poll_id", 1], ["created_at", "2018-12-13 20:47:24.819691"], ["updated_at", "2018-12-13 20:47:24.819691"]]
+  ↳ db/seeds.rb:27
+  [1m[36mAnswerChoice Create (0.1ms)[0m  [1m[32mINSERT INTO "answer_choices" ("text", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "String"], ["question_id", 2], ["created_at", "2018-12-13 20:47:24.820660"], ["updated_at", "2018-12-13 20:47:24.820660"]]
+  ↳ db/seeds.rb:28
+  [1m[36mAnswerChoice Create (0.1ms)[0m  [1m[32mINSERT INTO "answer_choices" ("text", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Ball"], ["question_id", 2], ["created_at", "2018-12-13 20:47:24.821517"], ["updated_at", "2018-12-13 20:47:24.821517"]]
+  ↳ db/seeds.rb:29
+  [1m[36mAnswerChoice Create (0.1ms)[0m  [1m[32mINSERT INTO "answer_choices" ("text", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Bird"], ["question_id", 2], ["created_at", "2018-12-13 20:47:24.822315"], ["updated_at", "2018-12-13 20:47:24.822315"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Load (28.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:11
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ db/seeds.rb:11
+  [1m[36mPoll Load (11.2ms)[0m  [1m[34mSELECT "polls".* FROM "polls"[0m
+  ↳ db/seeds.rb:12
+  [1m[36mPoll Destroy (0.1ms)[0m  [1m[31mDELETE FROM "polls" WHERE "polls"."id" = ?[0m  [["id", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mQuestion Load (16.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ db/seeds.rb:13
+  [1m[36mQuestion Destroy (0.1ms)[0m  [1m[31mDELETE FROM "questions" WHERE "questions"."id" = ?[0m  [["id", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mQuestion Destroy (0.1ms)[0m  [1m[31mDELETE FROM "questions" WHERE "questions"."id" = ?[0m  [["id", 2]]
+  ↳ db/seeds.rb:13
+  [1m[36mAnswerChoice Load (0.2ms)[0m  [1m[34mSELECT "answer_choices".* FROM "answer_choices"[0m
+  ↳ db/seeds.rb:14
+  [1m[36mAnswerChoice Destroy (0.1ms)[0m  [1m[31mDELETE FROM "answer_choices" WHERE "answer_choices"."id" = ?[0m  [["id", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mAnswerChoice Destroy (0.1ms)[0m  [1m[31mDELETE FROM "answer_choices" WHERE "answer_choices"."id" = ?[0m  [["id", 2]]
+  ↳ db/seeds.rb:14
+  [1m[36mAnswerChoice Destroy (0.0ms)[0m  [1m[31mDELETE FROM "answer_choices" WHERE "answer_choices"."id" = ?[0m  [["id", 3]]
+  ↳ db/seeds.rb:14
+  [1m[36mAnswerChoice Destroy (0.0ms)[0m  [1m[31mDELETE FROM "answer_choices" WHERE "answer_choices"."id" = ?[0m  [["id", 4]]
+  ↳ db/seeds.rb:14
+  [1m[36mAnswerChoice Destroy (0.0ms)[0m  [1m[31mDELETE FROM "answer_choices" WHERE "answer_choices"."id" = ?[0m  [["id", 5]]
+  ↳ db/seeds.rb:14
+  [1m[36mAnswerChoice Destroy (0.0ms)[0m  [1m[31mDELETE FROM "answer_choices" WHERE "answer_choices"."id" = ?[0m  [["id", 6]]
+  ↳ db/seeds.rb:14
+  [1m[36mResponse Load (0.1ms)[0m  [1m[34mSELECT "responses".* FROM "responses"[0m
+  ↳ db/seeds.rb:15
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Markov"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["username", "Markov"], ["created_at", "2018-12-13 21:04:29.643485"], ["updated_at", "2018-12-13 21:04:29.643485"]]
+  ↳ db/seeds.rb:17
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Gizmo"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["username", "Gizmo"], ["created_at", "2018-12-13 21:04:29.645433"], ["updated_at", "2018-12-13 21:04:29.645433"]]
+  ↳ db/seeds.rb:18
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Victor"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["username", "Victor"], ["created_at", "2018-12-13 21:04:29.646599"], ["updated_at", "2018-12-13 21:04:29.646599"]]
+  ↳ db/seeds.rb:19
+  [1m[36mPoll Create (0.2ms)[0m  [1m[32mINSERT INTO "polls" ("user_id", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 3], ["title", "Cats Poll"], ["created_at", "2018-12-13 21:04:29.651004"], ["updated_at", "2018-12-13 21:04:29.651004"]]
+  ↳ db/seeds.rb:21
+  [1m[36mQuestion Create (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("text", "poll_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "What Cat Is Cutest?"], ["poll_id", 2], ["created_at", "2018-12-13 21:04:29.652807"], ["updated_at", "2018-12-13 21:04:29.652807"]]
+  ↳ db/seeds.rb:23
+  [1m[36mAnswerChoice Create (0.1ms)[0m  [1m[32mINSERT INTO "answer_choices" ("text", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Markov"], ["question_id", 3], ["created_at", "2018-12-13 21:04:29.654374"], ["updated_at", "2018-12-13 21:04:29.654374"]]
+  ↳ db/seeds.rb:24
+  [1m[36mAnswerChoice Create (0.1ms)[0m  [1m[32mINSERT INTO "answer_choices" ("text", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Curie"], ["question_id", 3], ["created_at", "2018-12-13 21:04:29.655196"], ["updated_at", "2018-12-13 21:04:29.655196"]]
+  ↳ db/seeds.rb:25
+  [1m[36mAnswerChoice Create (0.1ms)[0m  [1m[32mINSERT INTO "answer_choices" ("text", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Sally"], ["question_id", 3], ["created_at", "2018-12-13 21:04:29.655968"], ["updated_at", "2018-12-13 21:04:29.655968"]]
+  ↳ db/seeds.rb:26
+  [1m[36mQuestion Create (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("text", "poll_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Which Toy Is Most Fun?"], ["poll_id", 2], ["created_at", "2018-12-13 21:04:29.656814"], ["updated_at", "2018-12-13 21:04:29.656814"]]
+  ↳ db/seeds.rb:28
+  [1m[36mAnswerChoice Create (0.1ms)[0m  [1m[32mINSERT INTO "answer_choices" ("text", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "String"], ["question_id", 4], ["created_at", "2018-12-13 21:04:29.657693"], ["updated_at", "2018-12-13 21:04:29.657693"]]
+  ↳ db/seeds.rb:29
+  [1m[36mAnswerChoice Create (0.1ms)[0m  [1m[32mINSERT INTO "answer_choices" ("text", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Ball"], ["question_id", 4], ["created_at", "2018-12-13 21:04:29.658525"], ["updated_at", "2018-12-13 21:04:29.658525"]]
+  ↳ db/seeds.rb:30
+  [1m[36mAnswerChoice Create (0.1ms)[0m  [1m[32mINSERT INTO "answer_choices" ("text", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Bird"], ["question_id", 4], ["created_at", "2018-12-13 21:04:29.659508"], ["updated_at", "2018-12-13 21:04:29.659508"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:11
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ db/seeds.rb:11
+  [1m[36mPoll Load (0.1ms)[0m  [1m[34mSELECT "polls".* FROM "polls"[0m
+  ↳ db/seeds.rb:12
+  [1m[36mPoll Destroy (0.1ms)[0m  [1m[31mDELETE FROM "polls" WHERE "polls"."id" = ?[0m  [["id", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ db/seeds.rb:13
+  [1m[36mQuestion Destroy (0.1ms)[0m  [1m[31mDELETE FROM "questions" WHERE "questions"."id" = ?[0m  [["id", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mQuestion Destroy (0.1ms)[0m  [1m[31mDELETE FROM "questions" WHERE "questions"."id" = ?[0m  [["id", 2]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/models/answer_choice.rb:20
+  [1m[36mPoll Load (0.0ms)[0m  [1m[34mSELECT "polls".* FROM "polls"[0m
+  ↳ app/models/answer_choice.rb:21
+  [1m[36mQuestion Load (0.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ app/models/answer_choice.rb:22
+  [1m[36mAnswerChoice Load (0.2ms)[0m  [1m[34mSELECT "answer_choices".* FROM "answer_choices"[0m
+  ↳ app/models/answer_choice.rb:23
+  [1m[36mAnswerChoice Destroy (0.1ms)[0m  [1m[31mDELETE FROM "answer_choices" WHERE "answer_choices"."id" = ?[0m  [["id", 1]]
+  ↳ app/models/answer_choice.rb:23
+  [1m[36mAnswerChoice Destroy (0.1ms)[0m  [1m[31mDELETE FROM "answer_choices" WHERE "answer_choices"."id" = ?[0m  [["id", 2]]
+  ↳ app/models/answer_choice.rb:23
+  [1m[36mAnswerChoice Destroy (0.1ms)[0m  [1m[31mDELETE FROM "answer_choices" WHERE "answer_choices"."id" = ?[0m  [["id", 3]]
+  ↳ app/models/answer_choice.rb:23
+  [1m[36mAnswerChoice Destroy (0.1ms)[0m  [1m[31mDELETE FROM "answer_choices" WHERE "answer_choices"."id" = ?[0m  [["id", 4]]
+  ↳ app/models/answer_choice.rb:23
+  [1m[36mAnswerChoice Destroy (0.0ms)[0m  [1m[31mDELETE FROM "answer_choices" WHERE "answer_choices"."id" = ?[0m  [["id", 5]]
+  ↳ app/models/answer_choice.rb:23
+  [1m[36mAnswerChoice Destroy (0.0ms)[0m  [1m[31mDELETE FROM "answer_choices" WHERE "answer_choices"."id" = ?[0m  [["id", 6]]
+  ↳ app/models/answer_choice.rb:23
+  [1m[36mResponse Load (0.1ms)[0m  [1m[34mSELECT "responses".* FROM "responses"[0m
+  ↳ app/models/answer_choice.rb:24
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Markov"], ["LIMIT", 1]]
+  ↳ app/models/answer_choice.rb:26
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["username", "Markov"], ["created_at", "2018-12-13 21:10:08.219727"], ["updated_at", "2018-12-13 21:10:08.219727"]]
+  ↳ app/models/answer_choice.rb:26
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Gizmo"], ["LIMIT", 1]]
+  ↳ app/models/answer_choice.rb:27
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["username", "Gizmo"], ["created_at", "2018-12-13 21:10:08.221303"], ["updated_at", "2018-12-13 21:10:08.221303"]]
+  ↳ app/models/answer_choice.rb:27
+  [1m[36mPoll Create (0.2ms)[0m  [1m[32mINSERT INTO "polls" ("user_id", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 3], ["title", "Cats Poll"], ["created_at", "2018-12-13 21:10:08.226386"], ["updated_at", "2018-12-13 21:10:08.226386"]]
+  ↳ app/models/answer_choice.rb:29
+  [1m[36mQuestion Create (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("text", "poll_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "What Cat Is Cutest?"], ["poll_id", 2], ["created_at", "2018-12-13 21:10:08.228322"], ["updated_at", "2018-12-13 21:10:08.228322"]]
+  ↳ app/models/answer_choice.rb:31
+  [1m[36mAnswerChoice Create (0.1ms)[0m  [1m[32mINSERT INTO "answer_choices" ("text", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Markov"], ["question_id", 3], ["created_at", "2018-12-13 21:10:08.229896"], ["updated_at", "2018-12-13 21:10:08.229896"]]
+  ↳ app/models/answer_choice.rb:32
+  [1m[36mAnswerChoice Create (0.1ms)[0m  [1m[32mINSERT INTO "answer_choices" ("text", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Curie"], ["question_id", 3], ["created_at", "2018-12-13 21:10:08.230755"], ["updated_at", "2018-12-13 21:10:08.230755"]]
+  ↳ app/models/answer_choice.rb:33
+  [1m[36mAnswerChoice Create (0.1ms)[0m  [1m[32mINSERT INTO "answer_choices" ("text", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Sally"], ["question_id", 3], ["created_at", "2018-12-13 21:10:08.231531"], ["updated_at", "2018-12-13 21:10:08.231531"]]
+  ↳ app/models/answer_choice.rb:34
+  [1m[36mQuestion Create (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("text", "poll_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Which Toy Is Most Fun?"], ["poll_id", 2], ["created_at", "2018-12-13 21:10:08.232417"], ["updated_at", "2018-12-13 21:10:08.232417"]]
+  ↳ app/models/answer_choice.rb:36
+  [1m[36mAnswerChoice Create (0.2ms)[0m  [1m[32mINSERT INTO "answer_choices" ("text", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "String"], ["question_id", 4], ["created_at", "2018-12-13 21:10:08.233816"], ["updated_at", "2018-12-13 21:10:08.233816"]]
+  ↳ app/models/answer_choice.rb:37
+  [1m[36mAnswerChoice Create (0.1ms)[0m  [1m[32mINSERT INTO "answer_choices" ("text", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Ball"], ["question_id", 4], ["created_at", "2018-12-13 21:10:08.235343"], ["updated_at", "2018-12-13 21:10:08.235343"]]
+  ↳ app/models/answer_choice.rb:38
+  [1m[36mAnswerChoice Create (0.1ms)[0m  [1m[32mINSERT INTO "answer_choices" ("text", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Bird"], ["question_id", 4], ["created_at", "2018-12-13 21:10:08.236246"], ["updated_at", "2018-12-13 21:10:08.236246"]]
+  ↳ app/models/answer_choice.rb:39
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:11
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mUser Destroy (0.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ db/seeds.rb:11
+  [1m[36mPoll Load (0.1ms)[0m  [1m[34mSELECT "polls".* FROM "polls"[0m
+  ↳ db/seeds.rb:12
+  [1m[36mPoll Destroy (0.1ms)[0m  [1m[31mDELETE FROM "polls" WHERE "polls"."id" = ?[0m  [["id", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions"[0m
+  ↳ db/seeds.rb:13
+  [1m[36mQuestion Destroy (0.1ms)[0m  [1m[31mDELETE FROM "questions" WHERE "questions"."id" = ?[0m  [["id", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mQuestion Destroy (0.1ms)[0m  [1m[31mDELETE FROM "questions" WHERE "questions"."id" = ?[0m  [["id", 2]]
+  ↳ db/seeds.rb:13
+  [1m[36mAnswerChoice Load (0.1ms)[0m  [1m[34mSELECT "answer_choices".* FROM "answer_choices"[0m
+  ↳ db/seeds.rb:14
+  [1m[36mAnswerChoice Destroy (0.1ms)[0m  [1m[31mDELETE FROM "answer_choices" WHERE "answer_choices"."id" = ?[0m  [["id", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mAnswerChoice Destroy (0.1ms)[0m  [1m[31mDELETE FROM "answer_choices" WHERE "answer_choices"."id" = ?[0m  [["id", 2]]
+  ↳ db/seeds.rb:14
+  [1m[36mAnswerChoice Destroy (0.1ms)[0m  [1m[31mDELETE FROM "answer_choices" WHERE "answer_choices"."id" = ?[0m  [["id", 3]]
+  ↳ db/seeds.rb:14
+  [1m[36mAnswerChoice Destroy (0.0ms)[0m  [1m[31mDELETE FROM "answer_choices" WHERE "answer_choices"."id" = ?[0m  [["id", 4]]
+  ↳ db/seeds.rb:14
+  [1m[36mAnswerChoice Destroy (0.1ms)[0m  [1m[31mDELETE FROM "answer_choices" WHERE "answer_choices"."id" = ?[0m  [["id", 5]]
+  ↳ db/seeds.rb:14
+  [1m[36mAnswerChoice Destroy (0.0ms)[0m  [1m[31mDELETE FROM "answer_choices" WHERE "answer_choices"."id" = ?[0m  [["id", 6]]
+  ↳ db/seeds.rb:14
+  [1m[36mResponse Load (0.2ms)[0m  [1m[34mSELECT "responses".* FROM "responses"[0m
+  ↳ db/seeds.rb:15
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Markov"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["username", "Markov"], ["created_at", "2018-12-13 21:11:24.570087"], ["updated_at", "2018-12-13 21:11:24.570087"]]
+  ↳ db/seeds.rb:17
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Gizmo"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["username", "Gizmo"], ["created_at", "2018-12-13 21:11:24.571675"], ["updated_at", "2018-12-13 21:11:24.571675"]]
+  ↳ db/seeds.rb:18
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Victor"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["username", "Victor"], ["created_at", "2018-12-13 21:11:24.572858"], ["updated_at", "2018-12-13 21:11:24.572858"]]
+  ↳ db/seeds.rb:19
+  [1m[36mPoll Create (0.1ms)[0m  [1m[32mINSERT INTO "polls" ("user_id", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 3], ["title", "Cats Poll"], ["created_at", "2018-12-13 21:11:24.575416"], ["updated_at", "2018-12-13 21:11:24.575416"]]
+  ↳ db/seeds.rb:21
+  [1m[36mQuestion Create (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("text", "poll_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "What Cat Is Cutest?"], ["poll_id", 2], ["created_at", "2018-12-13 21:11:24.577000"], ["updated_at", "2018-12-13 21:11:24.577000"]]
+  ↳ db/seeds.rb:23
+  [1m[36mAnswerChoice Create (0.1ms)[0m  [1m[32mINSERT INTO "answer_choices" ("text", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Markov"], ["question_id", 3], ["created_at", "2018-12-13 21:11:24.578452"], ["updated_at", "2018-12-13 21:11:24.578452"]]
+  ↳ db/seeds.rb:24
+  [1m[36mAnswerChoice Create (0.1ms)[0m  [1m[32mINSERT INTO "answer_choices" ("text", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Curie"], ["question_id", 3], ["created_at", "2018-12-13 21:11:24.579432"], ["updated_at", "2018-12-13 21:11:24.579432"]]
+  ↳ db/seeds.rb:25
+  [1m[36mAnswerChoice Create (0.1ms)[0m  [1m[32mINSERT INTO "answer_choices" ("text", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Sally"], ["question_id", 3], ["created_at", "2018-12-13 21:11:24.580255"], ["updated_at", "2018-12-13 21:11:24.580255"]]
+  ↳ db/seeds.rb:26
+  [1m[36mQuestion Create (0.1ms)[0m  [1m[32mINSERT INTO "questions" ("text", "poll_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Which Toy Is Most Fun?"], ["poll_id", 2], ["created_at", "2018-12-13 21:11:24.581080"], ["updated_at", "2018-12-13 21:11:24.581080"]]
+  ↳ db/seeds.rb:28
+  [1m[36mAnswerChoice Create (0.1ms)[0m  [1m[32mINSERT INTO "answer_choices" ("text", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "String"], ["question_id", 4], ["created_at", "2018-12-13 21:11:24.581975"], ["updated_at", "2018-12-13 21:11:24.581975"]]
+  ↳ db/seeds.rb:29
+  [1m[36mAnswerChoice Create (0.1ms)[0m  [1m[32mINSERT INTO "answer_choices" ("text", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Ball"], ["question_id", 4], ["created_at", "2018-12-13 21:11:24.582764"], ["updated_at", "2018-12-13 21:11:24.582764"]]
+  ↳ db/seeds.rb:30
+  [1m[36mAnswerChoice Create (0.1ms)[0m  [1m[32mINSERT INTO "answer_choices" ("text", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "Bird"], ["question_id", 4], ["created_at", "2018-12-13 21:11:24.583547"], ["updated_at", "2018-12-13 21:11:24.583547"]]
+  ↳ db/seeds.rb:31
+  [1m[36mResponse Create (0.1ms)[0m  [1m[32mINSERT INTO "responses" ("user_id", "answer_choice", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 5], ["answer_choice", 9], ["created_at", "2018-12-13 21:11:24.589320"], ["updated_at", "2018-12-13 21:11:24.589320"]]
+  ↳ db/seeds.rb:33
+  [1m[36mResponse Create (0.1ms)[0m  [1m[32mINSERT INTO "responses" ("user_id", "answer_choice", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 5], ["answer_choice", 10], ["created_at", "2018-12-13 21:11:24.590433"], ["updated_at", "2018-12-13 21:11:24.590433"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mAnswerChoice Load (0.2ms)[0m  [1m[34mSELECT "answer_choices".* FROM "answer_choices"[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" INNER JOIN "answer_choices" ON "questions"."id" = "answer_choices"."question_id" WHERE "answer_choices"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mResponse Load (0.2ms)[0m  [1m[34mSELECT "responses".* FROM "responses" INNER JOIN "answer_choices" ON "responses"."answer_choice" = "answer_choices"."id" WHERE "answer_choices"."question_id" = ?[0m  [["question_id", 4]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAnswerChoice Load (0.1ms)[0m  [1m[34mSELECT  "answer_choices".* FROM "answer_choices" WHERE "answer_choices"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mResponse Create (0.3ms)[0m  [1m[32mINSERT INTO "responses" ("user_id", "answer_choice", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 3], ["answer_choice", 10], ["created_at", "2018-12-13 21:34:24.768876"], ["updated_at", "2018-12-13 21:34:24.768876"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" INNER JOIN "answer_choices" ON "questions"."id" = "answer_choices"."question_id" WHERE "answer_choices"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mResponse Load (0.1ms)[0m  [1m[34mSELECT "responses".* FROM "responses" INNER JOIN "answer_choices" ON "responses"."answer_choice" = "answer_choices"."id" WHERE "answer_choices"."question_id" = ?[0m  [["question_id", 4]]
+  [1m[36mResponse Load (0.1ms)[0m  [1m[34mSELECT  "responses".* FROM "responses" WHERE "responses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" INNER JOIN "answer_choices" ON "questions"."id" = "answer_choices"."question_id" WHERE "answer_choices"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mResponse Load (0.2ms)[0m  [1m[34mSELECT "responses".* FROM "responses" INNER JOIN "answer_choices" ON "responses"."answer_choice" = "answer_choices"."id" WHERE "answer_choices"."question_id" = ?[0m  [["question_id", 4]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" INNER JOIN "answer_choices" ON "questions"."id" = "answer_choices"."question_id" WHERE "answer_choices"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mResponse Load (0.1ms)[0m  [1m[34mSELECT "responses".* FROM "responses" INNER JOIN "answer_choices" ON "responses"."answer_choice" = "answer_choices"."id" WHERE "answer_choices"."question_id" = ?[0m  [["question_id", 3]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mAnswerChoice Load (0.6ms)[0m  [1m[34mSELECT  "answer_choices".* FROM "answer_choices" WHERE "answer_choices"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mResponse Create (0.3ms)[0m  [1m[32mINSERT INTO "responses" ("user_id", "answer_choice", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 5], ["answer_choice", 9], ["created_at", "2018-12-13 21:45:31.246897"], ["updated_at", "2018-12-13 21:45:31.246897"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mResponse Load (0.2ms)[0m  [1m[34mSELECT  "responses".* FROM "responses" WHERE "responses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" INNER JOIN "answer_choices" ON "questions"."id" = "answer_choices"."question_id" WHERE "answer_choices"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mResponse Load (0.1ms)[0m  [1m[34mSELECT "responses".* FROM "responses" INNER JOIN "answer_choices" ON "responses"."answer_choice" = "answer_choices"."id" WHERE "answer_choices"."question_id" = ?[0m  [["question_id", 3]]
+  [1m[36mResponse Load (0.2ms)[0m  [1m[34mSELECT  "responses".* FROM "responses" WHERE "responses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" INNER JOIN "answer_choices" ON "questions"."id" = "answer_choices"."question_id" WHERE "answer_choices"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mResponse Load (0.2ms)[0m  [1m[34mSELECT "responses".* FROM "responses" INNER JOIN "answer_choices" ON "responses"."answer_choice" = "answer_choices"."id" WHERE "answer_choices"."question_id" = ?[0m  [["question_id", 3]]
+  [1m[36mResponse Load (0.2ms)[0m  [1m[34mSELECT  "responses".* FROM "responses" WHERE "responses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" INNER JOIN "answer_choices" ON "questions"."id" = "answer_choices"."question_id" WHERE "answer_choices"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mResponse Load (0.1ms)[0m  [1m[34mSELECT "responses".* FROM "responses" INNER JOIN "answer_choices" ON "responses"."answer_choice" = "answer_choices"."id" WHERE "answer_choices"."question_id" = ?[0m  [["question_id", 3]]
+  [1m[36mResponse Load (0.2ms)[0m  [1m[34mSELECT  "responses".* FROM "responses" WHERE "responses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" INNER JOIN "answer_choices" ON "questions"."id" = "answer_choices"."question_id" WHERE "answer_choices"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mResponse Load (0.3ms)[0m  [1m[34mSELECT "responses".* FROM "responses" INNER JOIN "answer_choices" ON "responses"."answer_choice" = "answer_choices"."id" WHERE "answer_choices"."question_id" = ?[0m  [["question_id", 3]]
+  [1m[36mResponse Load (6.7ms)[0m  [1m[34mSELECT "responses".* FROM "responses"[0m
+  [1m[36mResponse Load (0.2ms)[0m  [1m[34mSELECT  "responses".* FROM "responses" ORDER BY "responses"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" INNER JOIN "answer_choices" ON "questions"."id" = "answer_choices"."question_id" WHERE "answer_choices"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mResponse Load (0.2ms)[0m  [1m[34mSELECT "responses".* FROM "responses" INNER JOIN "answer_choices" ON "responses"."answer_choice" = "answer_choices"."id" WHERE "answer_choices"."question_id" = ? AND "responses"."id" != ?[0m  [["question_id", 3], ["id", 4]]
+  [1m[36mUser Load (7.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mResponse Load (0.2ms)[0m  [1m[34mSELECT "responses".* FROM "responses"[0m
